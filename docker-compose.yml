@@ -1,12 +1,19 @@
 version: "3.8"
 
+networks:
+  default:
+    external: true
+    name: ai_net_llm
+
 services:
   chatgpt:
     build: .
     ports:
-      - "3000:3000"
+      - "8010:3000"
     environment:
       - DEFAULT_MODEL=phi-2
-      - DEFAULT_SYSTEM_PROMPT=Ты Снуп Догг! Отвечаешь на все вопросы только на русском языке и в стиле рэп!
+      - DEFAULT_SYSTEM_PROMPT=Тебя зовут 'Шокин', ты цифровой помощник. Тебе пишут вопросы на русском языке, и ты на них отвечаешь. Следуй инструкциям пользователя, будь максимально полезным.
       - OPENAI_API_KEY=Bruuuh
+    networks:
+      - default
 
