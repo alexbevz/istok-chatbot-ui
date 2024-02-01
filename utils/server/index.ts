@@ -30,10 +30,10 @@ export const OpenAIStream = async (
   const res = await fetch(`${OPENAI_API_HOST}/v1/chat/completions`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
-      ...(process.env.OPENAI_ORGANIZATION && {
-        'OpenAI-Organization': process.env.OPENAI_ORGANIZATION,
-      }),
+      // Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
+      // ...(process.env.OPENAI_ORGANIZATION && {
+      //   'OpenAI-Organization': process.env.OPENAI_ORGANIZATION,
+      // }),
     },
     method: 'POST',
     body: JSON.stringify({

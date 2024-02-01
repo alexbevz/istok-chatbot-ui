@@ -279,21 +279,22 @@ export const ChatInput: FC<Props> = ({
             {plugin ? <IconBrandGoogle size={20} /> : <IconBolt size={20} />}
           </button>
 
-          {showPluginSelect && (
-            <div className="absolute left-0 bottom-14 bg-white dark:bg-[#343541]">
-              <PluginSelect
-                plugin={plugin}
-                onPluginChange={(plugin: Plugin) => {
-                  setPlugin(plugin);
-                  setShowPluginSelect(false);
+          {/* TODO: Отключение плагина*/}
+          {/*{showPluginSelect && (*/}
+          {/*  <div className="absolute left-0 bottom-14 bg-white dark:bg-[#343541]">*/}
+          {/*    <PluginSelect*/}
+          {/*      plugin={plugin}*/}
+          {/*      onPluginChange={(plugin: Plugin) => {*/}
+          {/*        setPlugin(plugin);*/}
+          {/*        setShowPluginSelect(false);*/}
 
-                  if (textareaRef && textareaRef.current) {
-                    textareaRef.current.focus();
-                  }
-                }}
-              />
-            </div>
-          )}
+          {/*        if (textareaRef && textareaRef.current) {*/}
+          {/*          textareaRef.current.focus();*/}
+          {/*        }*/}
+          {/*      }}*/}
+          {/*    />*/}
+          {/*  </div>*/}
+          {/*)}*/}
 
           <textarea
             ref={textareaRef}
@@ -309,7 +310,7 @@ export const ChatInput: FC<Props> = ({
               }`,
             }}
             placeholder={
-              t('Type a message or type "/" to select a prompt...') || ''
+              t('Напечатайте сообщение..') || ''
             }
             value={content}
             rows={1}
@@ -353,18 +354,18 @@ export const ChatInput: FC<Props> = ({
         </div>
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-[12px] text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
+          {t(
+              "Если возникли проблемы, пишите в тех. поддержку на ",
+          )}
         <a
-          href="https://github.com/mckaywrigley/chatbot-ui"
+          href="http://portal"
           target="_blank"
           rel="noreferrer"
           className="underline"
         >
-          ChatBot UI
+          корпоративном портале
         </a>
-        .{' '}
-        {t(
-          "Chatbot UI is an advanced chatbot kit for OpenAI's chat models aiming to mimic ChatGPT's interface and functionality.",
-        )}
+          .
       </div>
     </div>
   );

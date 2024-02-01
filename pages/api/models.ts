@@ -14,10 +14,11 @@ const handler = async (req: Request): Promise<Response> => {
     const response = await fetch(`${OPENAI_API_HOST}/v1/models`, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
-        ...(process.env.OPENAI_ORGANIZATION && {
-          'OpenAI-Organization': process.env.OPENAI_ORGANIZATION,
-        })
+        // TODO: Убрали токен
+        // Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
+        // ...(process.env.OPENAI_ORGANIZATION && {
+        //   'OpenAI-Organization': process.env.OPENAI_ORGANIZATION,
+        // })
       },
     });
 

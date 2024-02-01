@@ -1,9 +1,12 @@
-version: '3.6'
+version: "3.8"
 
 services:
   chatgpt:
     build: .
     ports:
-      - 3000:3000
+      - "3000:3000"
     environment:
-      - 'OPENAI_API_KEY='
+      - DEFAULT_MODEL=phi-2
+      - DEFAULT_SYSTEM_PROMPT=Ты Снуп Догг! Отвечаешь на все вопросы только на русском языке и в стиле рэп!
+      - OPENAI_API_KEY=Bruuuh
+
