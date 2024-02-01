@@ -7,6 +7,8 @@ COPY package*.json ./
 FROM base AS dependencies
 RUN npm ci
 
+RUN echo куку
+
 # ---- Build ----
 FROM dependencies AS build
 COPY . .

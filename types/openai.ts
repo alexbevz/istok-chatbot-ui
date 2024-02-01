@@ -6,21 +6,21 @@ export interface OpenAIModel {
 }
 
 export enum OpenAIModelID {
-  PHI_2 = 'phi-2',
+  IstokGPT = 'istokgpt10b',
   // TODO: Добавление названий моделей
   // GPT_3_5 = 'gpt-3.5-turbo',
   // GPT_4 = 'gpt-4',
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.PHI_2;
+export const fallbackModelID = OpenAIModelID.IstokGPT;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
-    [OpenAIModelID.PHI_2]: {
-    id: OpenAIModelID.PHI_2,
-    name: 'phi-2',
+    [OpenAIModelID.IstokGPT]: {
+    id: OpenAIModelID.IstokGPT,
+    name: 'Istok-Alpha',
     maxLength: 12000,
-    tokenLimit: 4000,
+    tokenLimit: 4096,
   },
   // TODO: Добавление параметров моделей
   // [OpenAIModelID.GPT_3_5]: {
